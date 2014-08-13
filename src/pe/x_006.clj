@@ -12,6 +12,7 @@
 ; Find the difference between the sum of the squares of the first one hundred natural 
 ; numbers and the square of the sum.
 
-(-
-    (*  (reduce + (range 1 101)) (reduce + (range 1 101)))
-    (reduce + (map #(* % %) (range 1 101))))
+(let [x (range 1 101)]
+    (-
+        (* (reduce + x) (reduce + x))
+        (reduce + (map #(* % %) x))))
